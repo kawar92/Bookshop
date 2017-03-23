@@ -1,0 +1,5 @@
+
+.icon-basket:before { content: '\e800'; } /* '' */
+.icon-mail:before { content: '\e801'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-github:before { content: '\f113'; } /* '' */

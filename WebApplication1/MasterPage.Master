@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Bookshop.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Robert Kawa WEBSHOP</title>
+    <script type="text/javascript" src="../JavaScript/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var NavY = $('.nav').offset().top;
+
+            var stickyNav = function () {
+                var ScrollY = $(window).scrollTop();
+
+                if (ScrollY > NavY) {
+                    $('.nav').addClass('sticky');
+                } else {
+                    $('.nav').removeClass('sticky');
+                }
+            };
+
+            stickyNav();
+
+            $(window).scroll(function () {
+                stickyNav();
+            });
+        });
+
+    </script>
+    
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<link href="CSS/fontello.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" EnableCdn="true" EnableCdnFallback ="true"></asp:ScriptManager>
+  <div class="wrapper">
+		<div class="header">
+		
+			<div class="logo">
+				<img src="Images/books.png" runat="server" style="float: left;"/>
+				<span style="color: #c34f4f">Antykwariat</span>Kawa
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+		<div class="nav">
+		    
+			<ol>
+				    <li><a href="~/Pages/Home.aspx" runat="server">Home</a></li>
+                    <li><a href="~/Pages/Books.aspx" runat="server">Books</a></li>
+                    <li><a href="~/Pages/Shop.aspx" runat="server">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Management</a>
+                        <ul>
+                            <li><a href="~/Pages/Books_Overview.aspx" runat="server">Books</a></li>
+                            <li><a href="~/Pages/Account/Admin.aspx" runat="server">Users</a></li>
+                            <li><a href="~/Pages/Orders.aspx" runat="server">Orders</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="Login">
+                            <asp:LinkButton ID="LinkButton1" ForeColor ="Red" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                        </div>
+                    </li>
+            </ol>
+		</div>	
+                
+				 
+				
+				
+           
+			
+            
+	    
+		<div class="content">
+		    
+			
+            <p>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </p>
+			
+			
+		</div>
+		
+		<div class="socials">
+		    
+			<div class="socialdivs">
+			    
+				<div class="allegro" onclick="javascript:window.open('http://allegro.pl/show_user.php?uid=44306194');" >
+				    <i class="icon-basket"></i>
+				</div>
+				</div>
+                
+                   
+				<div class="mail" onclick="javascript:parent.location='mailto:kawar@wit.edu.pl';">
+					<i class="icon-mail"></i>
+				</div>
+				<div class="facebook" onclick="javascript:window.open('https://www.facebook.com/robert.kdow');" >
+					<i class="icon-facebook"></i>
+				</div>
+				<div class="github" onclick="javascript:window.open('https://github.com/kawar92');" >
+					<i class="icon-github"></i>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+		
+		<div class="footer">github.com/kawar92 &copy; 2017 Zatrudnij mnie ;)</div>
+	</div>
+    </form>
+	
+</body>
+</html>
