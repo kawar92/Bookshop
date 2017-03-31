@@ -27,7 +27,7 @@ namespace Bookshop
         public List<Book> GetBooksByGenre(string bookGenre)
         {
             List<Book> list = new List<Book>();
-            string query = string.Format("SELECT * FROM book WHERE genre LIKE '{0}'", bookGenre);
+            
 
             try
             {
